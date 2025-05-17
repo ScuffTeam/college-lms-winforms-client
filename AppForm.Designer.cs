@@ -88,12 +88,12 @@
             checkPass.AutoSize = true;
             checkPass.Checked = true;
             checkPass.CheckState = CheckState.Checked;
-            checkPass.Location = new Point(151, 114);
+            checkPass.Location = new Point(169, 114);
             checkPass.Margin = new Padding(5, 6, 5, 6);
             checkPass.Name = "checkPass";
-            checkPass.Size = new Size(117, 34);
+            checkPass.Size = new Size(99, 34);
             checkPass.TabIndex = 5;
-            checkPass.Text = "показать";
+            checkPass.Text = "скрыть";
             checkPass.UseVisualStyleBackColor = true;
             checkPass.CheckedChanged += checkPass_CheckedChanged;
             // 

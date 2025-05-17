@@ -15,7 +15,9 @@ namespace college_lms_winforms_client
 
             if (login == "admin" && password == "123") // Пример проверки
             {
-                MessageBox.Show("вход выполнен", "привет придурок", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                Hide();
             }
             else
             {
