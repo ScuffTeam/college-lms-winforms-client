@@ -18,6 +18,7 @@ namespace college_lms_winforms_client
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
                 Hide();
+                mainForm.FormClosed += (s, args) => this.Close();
             }
             else
             {
