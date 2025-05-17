@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             _pagesTabControl = new TabControl();
             tabPage1 = new TabPage();
             _scheduleGridView = new DataGridView();
+
             tabPage2 = new TabPage();
             panel6 = new Panel();
             AttendanceLabel = new Label();
@@ -56,6 +58,16 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+
+            panelNavigation = new Panel();
+            lblWeekInfo = new Label();
+            BtnNextWeek = new Button();
+            BtnPrevWeek = new Button();
+            tabPage2 = new TabPage();
+            _pagesTabControl.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)_scheduleGridView).BeginInit();
+            panelNavigation.SuspendLayout();
             SuspendLayout();
             // 
             // _pagesTabControl
@@ -72,6 +84,7 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(_scheduleGridView);
+            tabPage1.Controls.Add(panelNavigation);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -81,7 +94,7 @@
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // _scheduleGridView
-            // 
+            //
             _scheduleGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             _scheduleGridView.Dock = DockStyle.Fill;
             _scheduleGridView.Location = new Point(3, 3);
@@ -98,6 +111,66 @@
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(panel2);
             tabPage2.Controls.Add(panel1);
+            _scheduleGridView.AllowUserToAddRows = false;
+            _scheduleGridView.AllowUserToDeleteRows = false;
+            _scheduleGridView.AllowUserToResizeColumns = false;
+            _scheduleGridView.AllowUserToResizeRows = false;
+            _scheduleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            _scheduleGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            _scheduleGridView.Dock = DockStyle.Fill;
+            _scheduleGridView.Location = new Point(3, 48);
+            _scheduleGridView.Name = "_scheduleGridView";
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            _scheduleGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            _scheduleGridView.RowTemplate.Height = 280;
+            _scheduleGridView.Size = new Size(786, 371);
+            _scheduleGridView.TabIndex = 0;
+            // 
+            // panelNavigation
+            // 
+            panelNavigation.Controls.Add(lblWeekInfo);
+            panelNavigation.Controls.Add(BtnNextWeek);
+            panelNavigation.Controls.Add(BtnPrevWeek);
+            panelNavigation.Dock = DockStyle.Top;
+            panelNavigation.Location = new Point(3, 3);
+            panelNavigation.Name = "panelNavigation";
+            panelNavigation.Padding = new Padding(100, 0, 100, 0);
+            panelNavigation.Size = new Size(786, 45);
+            panelNavigation.TabIndex = 1;
+            // 
+            // lblWeekInfo
+            // 
+            lblWeekInfo.Dock = DockStyle.Fill;
+            lblWeekInfo.Location = new Point(175, 0);
+            lblWeekInfo.Name = "lblWeekInfo";
+            lblWeekInfo.Size = new Size(436, 45);
+            lblWeekInfo.TabIndex = 2;
+            lblWeekInfo.Text = "label1";
+            lblWeekInfo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // BtnNextWeek
+            // 
+            BtnNextWeek.Dock = DockStyle.Right;
+            BtnNextWeek.Location = new Point(611, 0);
+            BtnNextWeek.Name = "BtnNextWeek";
+            BtnNextWeek.Size = new Size(75, 45);
+            BtnNextWeek.TabIndex = 1;
+            BtnNextWeek.Text = "▶";
+            BtnNextWeek.UseVisualStyleBackColor = true;
+            // 
+            // BtnPrevWeek
+            // 
+            BtnPrevWeek.Dock = DockStyle.Left;
+            BtnPrevWeek.Location = new Point(100, 0);
+            BtnPrevWeek.Name = "BtnPrevWeek";
+            BtnPrevWeek.Size = new Size(75, 45);
+            BtnPrevWeek.TabIndex = 0;
+            BtnPrevWeek.Text = "◀";
+            BtnPrevWeek.UseVisualStyleBackColor = true;
+            BtnPrevWeek.Click += BtnPrevWeek_Click;
+            // 
+            // tabPage2
+            // 
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -239,6 +312,8 @@
             ProfileNameLabel.Size = new Size(143, 25);
             ProfileNameLabel.TabIndex = 1;
             ProfileNameLabel.Text = "Имя Фамилия:";
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -264,6 +339,7 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelNavigation.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -287,5 +363,11 @@
         private Panel panel6;
         private Label AttendanceLabel;
         private Label label1;
+        private Button button2;
+        private Button button1;
+        private Panel panelNavigation;
+        private Button BtnNextWeek;
+        private Button BtnPrevWeek;
+        private Label lblWeekInfo;
     }
 }
