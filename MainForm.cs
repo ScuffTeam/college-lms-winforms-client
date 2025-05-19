@@ -23,7 +23,7 @@ namespace college_lms_winforms_client
             string ProfileName = "Админ Админович";
             string ProfilePhone = "88005553555";
             string ProfileEmail = "admin123@gmail.com";
-            string ProfileLocation = "ааааааааааа";
+            string ProfileLocation = "ааааааааaa";
 
         }
     }
