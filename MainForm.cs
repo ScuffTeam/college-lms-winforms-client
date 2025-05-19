@@ -15,6 +15,16 @@ namespace college_lms_winforms_client
         public MainForm()
         {
             InitializeComponent();
+            Update_Data();
+        }
+
+        void Update_Data()
+        {
+            string ProfileName = "Админ Админович";
+            string ProfilePhone = "88005553555";
+            string ProfileEmail = "admin123@gmail.com";
+            string ProfileLocation = "ааааааааааа";
+
         }
     }
 }
