@@ -23,7 +23,16 @@ namespace college_lms_winforms_client
             string ProfileName = "Админ Админович";
             string ProfilePhone = "88005553555";
             string ProfileEmail = "admin123@gmail.com";
+            string ProfileBezday = "01.01.2001";
             string ProfileLocation = "ааааааааaa";
+            int ProfileAttendance = 100;
+
+            ProfileNameLabel.Text = "Имя Фамилия:\n" + ProfileName;
+            ProfilePhoneLabel.Text = "Телефон:\n" + ProfilePhone;
+            ProfileLocationLabel.Text = "Место проживания:\n" + ProfileLocation;
+            ProfileEmailLabel.Text = "Почта\n" + ProfileEmail;
+            ProfileBezdayLabel.Text = "Дата рождения:\n" + ProfileBezday;
+            AttendanceLabel.Text = ProfileAttendance + "%";
 
         }
     }
