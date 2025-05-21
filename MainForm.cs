@@ -585,7 +585,6 @@ namespace college_lms_winforms_client
 
             var weeklySchedule = new WeeklySchedule(lessons);
             LoadDataToGrid(weeklySchedule);
->>>>>>> d273ab4 (Добавлена страница расписания)
         }
     }
 }

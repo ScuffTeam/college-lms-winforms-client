@@ -32,7 +32,10 @@
             _pagesTabControl = new TabControl();
             tabPage1 = new TabPage();
             _scheduleGridView = new DataGridView();
-
+            panelNavigation = new Panel();
+            lblWeekInfo = new Label();
+            BtnNextWeek = new Button();
+            BtnPrevWeek = new Button();
             tabPage2 = new TabPage();
             panel6 = new Panel();
             AttendanceLabel = new Label();
@@ -51,6 +54,7 @@
             _pagesTabControl.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_scheduleGridView).BeginInit();
+            panelNavigation.SuspendLayout();
             tabPage2.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -58,16 +62,6 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-
-            panelNavigation = new Panel();
-            lblWeekInfo = new Label();
-            BtnNextWeek = new Button();
-            BtnPrevWeek = new Button();
-            tabPage2 = new TabPage();
-            _pagesTabControl.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)_scheduleGridView).BeginInit();
-            panelNavigation.SuspendLayout();
             SuspendLayout();
             // 
             // _pagesTabControl
@@ -94,28 +88,11 @@
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // _scheduleGridView
-            //
-            _scheduleGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            _scheduleGridView.Dock = DockStyle.Fill;
-            _scheduleGridView.Location = new Point(3, 3);
-            _scheduleGridView.Name = "_scheduleGridView";
-            _scheduleGridView.Size = new Size(786, 416);
-            _scheduleGridView.TabIndex = 0;
             // 
-            // tabPage2
-            // 
-            tabPage2.BackColor = SystemColors.ControlDark;
-            tabPage2.Controls.Add(panel6);
-            tabPage2.Controls.Add(panel5);
-            tabPage2.Controls.Add(panel4);
-            tabPage2.Controls.Add(panel3);
-            tabPage2.Controls.Add(panel2);
-            tabPage2.Controls.Add(panel1);
             _scheduleGridView.AllowUserToAddRows = false;
             _scheduleGridView.AllowUserToDeleteRows = false;
             _scheduleGridView.AllowUserToResizeColumns = false;
             _scheduleGridView.AllowUserToResizeRows = false;
-            _scheduleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             _scheduleGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             _scheduleGridView.Dock = DockStyle.Fill;
             _scheduleGridView.Location = new Point(3, 48);
@@ -171,12 +148,20 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = SystemColors.ControlDark;
+            tabPage2.Controls.Add(panel6);
+            tabPage2.Controls.Add(panel5);
+            tabPage2.Controls.Add(panel4);
+            tabPage2.Controls.Add(panel3);
+            tabPage2.Controls.Add(panel2);
+            tabPage2.Controls.Add(panel1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(792, 422);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "профиль";
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -312,8 +297,6 @@
             ProfileNameLabel.Size = new Size(143, 25);
             ProfileNameLabel.TabIndex = 1;
             ProfileNameLabel.Text = "Имя Фамилия:";
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -326,6 +309,7 @@
             _pagesTabControl.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)_scheduleGridView).EndInit();
+            panelNavigation.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -339,7 +323,6 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panelNavigation.ResumeLayout(false);
             ResumeLayout(false);
         }
 
