@@ -12,6 +12,8 @@ namespace college_lms_winforms_client
     public partial class MainForm : Form
     {
         private DateTime _currentWeekStart = DateTime.Today;
+        private DateTime lastResize = DateTime.Now;
+
         public MainForm()
         {
             InitializeComponent();
@@ -129,7 +131,7 @@ namespace college_lms_winforms_client
         DayOfWeek.Friday,
         DayOfWeek.Saturday,
         DayOfWeek.Sunday
-        
+
     };
 
         private void SetupDataGridView()
@@ -357,8 +359,8 @@ namespace college_lms_winforms_client
                     Classroom = "Аудитория 4",
                     Grade = 2
                 },
-                 
-                
+
+
                 new LessonWithGrade
                 {
                     SubjectName = "Физическая культура СПО РПО",
@@ -557,7 +559,7 @@ namespace college_lms_winforms_client
             }
         }
 
-        
+
 
         private void BtnNextWeek_Click(object sender, EventArgs e)
         {
@@ -585,6 +587,44 @@ namespace college_lms_winforms_client
 
             var weeklySchedule = new WeeklySchedule(lessons);
             LoadDataToGrid(weeklySchedule);
+        }
+
+        private async void OnFormResize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+                return;
+            var now = DateTime.Now;
+            lastResize = now;
+
+            await Task.Delay(200);
+
+            if (lastResize == now)
+            {
+                AdjustScheduleGridView();
+            }
+        }
+
+        private void AdjustScheduleGridView()
+        {
+            _scheduleGridView.Update();
+
+            int totalContentWidth = _scheduleGridView.Columns
+                .Cast<DataGridViewColumn>()
+                .Where(c => c.Visible)
+                .Sum(c => c.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, true));
+
+            int clientWidth = _scheduleGridView.ClientSize.Width;
+
+            const int scrollbarWidth = 20;
+
+            if (totalContentWidth + scrollbarWidth > clientWidth)
+            {
+                _scheduleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            else
+            {
+                _scheduleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
         }
     }
 }

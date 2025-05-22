@@ -1,6 +1,6 @@
 ﻿namespace college_lms_winforms_client
 {
-    partial class AppForm
+    partial class AuthForm
     {
         /// <summary>
         ///  Required designer variable.

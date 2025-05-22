@@ -93,6 +93,8 @@
             _scheduleGridView.AllowUserToDeleteRows = false;
             _scheduleGridView.AllowUserToResizeColumns = false;
             _scheduleGridView.AllowUserToResizeRows = false;
+            _scheduleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            _scheduleGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             _scheduleGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             _scheduleGridView.Dock = DockStyle.Fill;
             _scheduleGridView.Location = new Point(3, 48);
@@ -306,6 +308,7 @@
             Controls.Add(_pagesTabControl);
             Name = "MainForm";
             Text = "MainForm";
+            Resize += OnFormResize;
             _pagesTabControl.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)_scheduleGridView).EndInit();
