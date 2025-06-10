@@ -20,7 +20,14 @@ namespace college_lms_winforms_client
                 Hide();
                 mainForm.FormClosed += (s, args) => this.Close();
             }
-            else
+            else if (login == "admin2" && password == "123")
+            {
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
+                Hide();
+                adminForm.FormClosed += (s, args) => this.Close();
+            }
+            else 
             {
                 MessageBox.Show("вход не выполнен", "неправильный пароль или логин", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
